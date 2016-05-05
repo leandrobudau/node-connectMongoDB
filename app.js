@@ -43,15 +43,29 @@ var Modelo = mongoose.model('Modelo', schema);
 
 
 //PASSO 5 - Criando um documento
-var document = new Modelo({nome: 'Leandro', sobrenome: "Budau de Moraes"});
+var documento = new Modelo({nome: 'Leandro', sobrenome: "Budau de Moraes"});
 
 
 //PASSO 6 - Exibindo os dados
-console.log('Nome: ', document.nome);
-console.log('Sobrenome: ', document.sobrenome);
-console.log('Nome completo: ' + document.nomeCompleto());
+console.log('Nome: ', documento.nome);
+console.log('Sobrenome: ', documento.sobrenome);
+console.log('Nome completo: ' + documento.nomeCompleto());
+
+//PASSO 7 - Salvando o documento no banco de dados
+documento.save(function (err, documento) {
+    if(err) return console.erro(err);
+    console.log('Documento salvo com sucesso');
+});
+
+
 
 
 app.listen(3000, function () {
     console.log('\nRunning project in port 3000');
 });
+
+
+
+
+
+
