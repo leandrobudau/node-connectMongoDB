@@ -57,6 +57,12 @@ documento.save(function (err, documento) {
     console.log('Documento salvo com sucesso');
 });
 
+//PASSO 8 - Pesquisa de dados gravados no banco
+Modelo.find(function (err, documento) {
+    if(err) return console.error(err);
+    console.log(documento);
+});
+
 
 
 
